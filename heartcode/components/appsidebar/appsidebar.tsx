@@ -45,8 +45,8 @@ const items = [
     icon: Search,
   },
   {
-    title: "Settings",
-    url: "#",
+    title: "About Us",
+    url: "/about",
     icon: Settings,
   },
 ];
