@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/appsidebar/appsidebar";
+import { MySidebar } from "@/components/side-bar/side-bar";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = localFont({
@@ -38,7 +38,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SidebarProvider>
-            <AppSidebar />
+            <MySidebar />
             <main>
               <SidebarTrigger />
               {children}
