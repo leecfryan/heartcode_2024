@@ -22,12 +22,12 @@ const items = [
   },
   {
     title: "Quiz",
-    url: "/page2",
+    url: "#",
     icon: BookOpenCheck,
   },
   {
     title: "About Us",
-    url: "#",
+    url: "/about-us",
     icon: Ghost,
   },
 ];
