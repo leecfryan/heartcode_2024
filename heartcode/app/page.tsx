@@ -66,6 +66,7 @@ export default function Home() {
         <ChartComponent />
       </div>
       <div>
+        
       <CustAlertDialog />
       </div>
     </div>
