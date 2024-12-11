@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "embla-carousel-autoplay": "^8.5.1"
+    "@tsparticles/react": "^3.0.0",
+    "embla-carousel-autoplay": "^8.5.1",
+    "tsparticles": "^3.7.1"
   }
 }
