@@ -14,15 +14,15 @@ interface CustomCardProps {
 
 export function CustomCard({ title, content, image, link }: CustomCardProps) {
   return (
-    <Link href={link || "#"} className="block group">
-      <CardContainer className="inter-var w-full">
-        <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
-          <CardItem translateZ="100" className="w-full">
+    <Link href={link || "#"} className="flex h-[24rem] max-w-full">
+      <CardContainer className="inter-var">
+        <CardBody className="flex flex-col justify-center items-center bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] min-h-full w-full rounded-xl p-6 border">
+          <CardItem translateZ="100">
             <Image
               src={image}
               height={500}
-              width={1000}
-              className="w-full h-auto object-cover rounded-xl group-hover/card:shadow-xl"
+              width={500}
+              className="w-[18rem] h-[10rem] object-cover rounded-xl group-hover/card:shadow-xl"
               alt={title}
             />
           </CardItem>

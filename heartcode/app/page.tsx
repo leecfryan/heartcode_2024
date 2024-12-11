@@ -47,27 +47,25 @@ const cards = [
 export default function Home() {
   return (
     <div>
-      <div className="h-lvh w-dvw relative overflow-hidden flex flex-col items-center justify-center rounded-lg">
+      <div className="max-w-screen w-screen h-dvh relative overflow-hidden flex flex-col text-center justify-center rounded-lg">
         <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <Boxes />
         <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
           Substance Abuse
         </h1>
-        <p className="text-center mt-2 text-neutral-300 relative z-20">
-          Framer motion is the best animation library ngl
-        </p>
       </div>
-      <h1 className="text-xl text-center p-12">Types Of Substances</h1>
-      <div className="flex w-full justify-center">
-        <CustomCarousel cards={cards} />
+      <div>
+        <h1 className="text-5xl pt-12 text-center">Types Of Substances</h1>
+        <div className="flex w-full justify-center bg-blue-500">
+          <CustomCarousel cards={cards} />
+        </div>
       </div>
       <CustAlertDialog />
       <div className="w-1/2">
         <ChartComponent />
       </div>
       <div>
-        
-      <CustAlertDialog />
+        <CustAlertDialog />
       </div>
     </div>
   );
