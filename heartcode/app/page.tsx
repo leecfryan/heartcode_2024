@@ -65,8 +65,8 @@ export default function Home() {
         </p>
       </div>
       <div>
-        <h1 className="text-5xl pt-12 text-center text-2xl">Types Of Substances</h1>
-        <div className="flex w-full justify-center bg-blue-500">
+        <h1 className="text-5xl pt-12 text-center text-2xl mb-10">Types Of Substances</h1>
+        <div className="flex w-full justify-center">
           <CustomCarousel cards={cards} />
         </div>
       </div>
