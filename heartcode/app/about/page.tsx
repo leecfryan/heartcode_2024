@@ -61,7 +61,7 @@ export default function Home() {
               <CardHeader>
                 <CardTitle>Hi I am Cheyenne. I play with everything</CardTitle>
                 <CardDescription>
-                  I love singing, drawing, i play minecraft, roblox, path to
+                  I love singing and drawing, i play minecraft, roblox, path to
                   nowhere and project sekai
                 </CardDescription>
               </CardHeader>
