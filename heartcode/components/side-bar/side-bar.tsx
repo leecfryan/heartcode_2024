@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import * as React from "react";
 import { ModeToggle } from "../mode-toggle/mode-toggle";

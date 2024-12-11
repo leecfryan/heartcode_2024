@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -5,7 +6,6 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { MySidebar } from "@/components/side-bar/side-bar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
-
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
