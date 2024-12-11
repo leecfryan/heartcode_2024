@@ -7,15 +7,16 @@ import { CustomCarousel } from "@/components/carousel/custom-carousel";
 import { CustAlertDialog } from "@/components/alert-dialog/alert-dialog";
 import { CustAlertDialog1 } from "@/components/alert-dialog/alert-dialog_1";
 import { CustAlertDialog2 } from "@/components/alert-dialog/alert-dialog_2";
-import { CustAlertDialog3 } from "@/components/alert-dialog/alert-dialog_3";
-import { CustAlertDialog4 } from "@/components/alert-dialog/alert-dialog_4";
-import { CustAlertDialog5 } from "@/components/alert-dialog/alert-dialog_5";
+// import { CustAlertDialog3 } from "@/components/alert-dialog/alert-dialog_3";
+// import { CustAlertDialog4 } from "@/components/alert-dialog/alert-dialog_4";
+// import { CustAlertDialog5 } from "@/components/alert-dialog/alert-dialog_5";
 import { ChartComponent } from "@/components/chart/custom-chart";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { Circle } from "lucide-react";
 
 const cards = [
   {
@@ -68,7 +69,9 @@ export default function Home() {
         </p>
       </div>
       <div>
-        <h1 className="text-5xl pt-12 text-center text-2xl mb-10">Types Of Substances</h1>
+        <h1 className="text-5xl pt-12 text-center mb-10">
+          Types Of Substances
+        </h1>
         <div className="flex w-full justify-center">
           <CustomCarousel cards={cards} />
         </div>
@@ -76,24 +79,24 @@ export default function Home() {
       <h1 className="flex items-center justify-center font-semibold text-2xl">
         WHAT DIFFERENCE DOES IT MAKE?
       </h1>
-      <div className="flex items-center justify-center">
-        <div>
+      <div className="flex items-center justify-center p-5">
+        <div className="mx-2">
           <CustAlertDialog />
         </div>
-        <div>
+        <div className="mx-2">
           <CustAlertDialog1 />
         </div>
-        <div>
+        <div className="mx-2">
           <CustAlertDialog2 />
         </div>
       </div>
-      <div className=" w-screen flex align-middle justify-center mt-10">
+      <div className=" w-full flex align-middle justify-center mt-10">
         <div className="w-1/2">
           <div className="chart-header text-center">
-            <p className="text-lg">
-              The increase from 2022 to 2023
+            <p className="text-lg">The increase from 2022 to 2023</p>
+            <p className="text-md flex justify-center">
+              <Circle style={{color:'hsl(var(--chart-1))'}} size={24} />:2022- <Circle style={{color:'hsl(var(--chart-2))'}} size={24} />:2023
             </p>
-            <p className="text-md">blue:2022 - Green:2023</p>
           </div>
           <ChartComponent />
           <p className="text-md text-center">age</p>
@@ -101,7 +104,7 @@ export default function Home() {
       </div>
 
       <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">
-        WHY DO DRUGS?
+        WHY PEOPLE SUCCUMB TO DRUGS?
       </h1>
       <div className="flex items-center justify-center font-mono">
         <div>
@@ -125,7 +128,7 @@ export default function Home() {
           </HoverCard>
         </div>
 
-        <div className="mx-1">
+        <div className="mx-1 ">
           <HoverCard>
             <HoverCardTrigger className="text-xl">
               Influence and Upbringing,
@@ -138,7 +141,8 @@ export default function Home() {
           </HoverCard>
         </div>
       </div>
-      <div>
+
+      <div className="mt-10">
         <h1 className="text-2xl flex items-center justify-center font-semibold mt-8 mb-2 font-mono">
           HOTLINES:
         </h1>
