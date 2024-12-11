@@ -23,7 +23,7 @@ const items = [
   },
   {
     title: "Quiz",
-    url: "#",
+    url: "/quiz",
     icon: BookOpenCheck,
   },
   {
