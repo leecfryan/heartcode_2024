@@ -27,7 +27,7 @@ const items = [
   },
   {
     title: "About Us",
-    url: "/about-us",
+    url: "/about",
     icon: Ghost,
   },
 ];
