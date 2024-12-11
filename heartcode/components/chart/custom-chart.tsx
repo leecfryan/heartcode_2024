@@ -5,22 +5,17 @@ import { Bar, BarChart } from "recharts"
 import { ChartConfig, ChartContainer } from "@/components/ui/chart"
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: "January", 2022: 100, 2023: 110 },
 ]
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "#2563eb",
+  2022: {
+    label: "2022",
+    color: "#554666",
   },
-  mobile: {
-    label: "Mobile",
-    color: "#60a5fa",
+  2023: {
+    label: "2023",
+    color: "#535f85",
   },
 } satisfies ChartConfig
 
@@ -28,8 +23,8 @@ export function ChartComponent() {
   return (
     <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
       <BarChart accessibilityLayer data={chartData}>
-        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-        <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+        <Bar dataKey="2022" fill="var(--color-2022)" radius={4} />
+        <Bar dataKey="2023" fill="var(--color-2023)" radius={4} />
       </BarChart>
     </ChartContainer>
   )
