@@ -4,6 +4,7 @@ import { ModeToggle } from "../mode-toggle/mode-toggle";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -53,11 +54,10 @@ export function MySidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        {/* Dark Mode Toggle Section */}
-        <div className="">
-          <ModeToggle />
-        </div>
       </SidebarContent>
+      <SidebarFooter>
+        <ModeToggle />
+      </SidebarFooter>
     </Sidebar>
   );
 }
