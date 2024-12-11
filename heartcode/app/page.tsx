@@ -7,9 +7,6 @@ import { CustomCarousel } from "@/components/carousel/custom-carousel";
 import { CustAlertDialog } from "@/components/alert-dialog/alert-dialog";
 import { CustAlertDialog1 } from "@/components/alert-dialog/alert-dialog_1";
 import { CustAlertDialog2 } from "@/components/alert-dialog/alert-dialog_2";
-import { CustAlertDialog3 } from "@/components/alert-dialog/alert-dialog_3";
-import { CustAlertDialog4 } from "@/components/alert-dialog/alert-dialog_4";
-import { CustAlertDialog5 } from "@/components/alert-dialog/alert-dialog_5";
 import { ChartComponent } from "@/components/chart/custom-chart";
 import { HoverCard, HoverCardContent, HoverCardTrigger, } from "@/components/ui/hover-card"
 
@@ -70,7 +67,7 @@ export default function Home() {
           <CustomCarousel cards={cards} />
         </div>
       </div>
-      <h1 className="flex items-center justify-center font-semibold text-2xl">WHAT DIFFERENCE DOES IT MAKE?</h1>
+      <h1 className="flex items-center justify-center font-semibold text-2xl mb-4">WHAT DIFFERENCE DOES IT MAKE?</h1>
       <div className="flex items-center justify-center">
         <div><CustAlertDialog /></div>
         <div><CustAlertDialog1 /></div>
@@ -79,11 +76,12 @@ export default function Home() {
       <div className=" w-screen flex align-middle justify-center mt-10">
         <div className="w-1/2">
           <ChartComponent />
-          <p className="text-lg">The increase from 2022 to 2023</p>
+          <p className=" flex items-center justify-center text-lg">The increase from 2022 to 2023</p>
         </div>
       </div>
 
-      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">WHY DO DRUGS?</h1>
+      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">WHY PEOPLE DO DRUGS?</h1>
+      <p className="flex items-center justify-center">(Hover over the words)</p>
       <div className="flex items-center justify-center font-mono">
 
         <div>
@@ -106,15 +104,46 @@ export default function Home() {
 
         <div className="mx-1">
           <HoverCard>
-            <HoverCardTrigger className="text-xl">Influence and Upbringing,</HoverCardTrigger>
+            <HoverCardTrigger className="text-xl">Inluence and Upbringing,</HoverCardTrigger>
             <HoverCardContent>
               They abuse substancees because they were told it was right since many others do it around them without questioning if it was right or not.
             </HoverCardContent>
           </HoverCard>
         </div>
       </ div>
+
+      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">WHAT ELSE CAN THEY DO INSTEAD?</h1>
+      <p className="flex items-center justify-center">(Hover over the words)</p>
+      <div className="flex items-center justify-center">
+        <div>
+          <HoverCard>
+            <HoverCardTrigger className="text-xl">Seek professional help,</HoverCardTrigger>
+            <HoverCardContent>
+              People who are facing troubles can call the helplines and seek support from profesionals who are trained to help others who are suffering
+            </HoverCardContent>
+          </HoverCard>
+        </div>
+
+        <div className="mx-1">
+          <HoverCard>
+            <HoverCardTrigger className="text-xl">Get Regular Exercise,</HoverCardTrigger>
+            <HoverCardContent>
+              Getting regular exercise helps to clear the mind and strengthen the body which supports the mind.
+            </HoverCardContent>
+          </HoverCard>
+        </div>
+
+        <div className="mx-1">
+          <HoverCard>
+            <HoverCardTrigger className="text-xl">Have friends who are positive influences,</HoverCardTrigger>
+            <HoverCardContent>
+              Having people who are positive influencers allow one to not fall into temptation
+            </HoverCardContent>
+          </HoverCard>
+        </div>
+      </div>
       <div>
-        <h1 className="text-2xl flex items-center justify-center font-semibold mt-8 mb-2 font-mono">HOTLINES:</h1>
+        <h1 className="text-2xl flex items-center justify-center font-semibold mt-10 mb-2 font-mono">HOTLINES:</h1>
       </div>
       <div className="flex items-center justify-center font-mono">
         <p>National Addictions Management Service (NAMS) General Enquiries . Tel: 6389 2000. </p>
@@ -122,10 +151,9 @@ export default function Home() {
       <div className="flex items-center justify-center font-mono">
         <p>Appointments. Tel: 6389 2200</p>
       </div>
-      <div className="flex items-center justify-center font-mono"> 
+      <div className="flex items-center justify-center font-mono">
         <p>Mental Health Helpline. Tel: 6389 2222</p>
       </div>
-
-    </div>
+    </div >
   );
 }
