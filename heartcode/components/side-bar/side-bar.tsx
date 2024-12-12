@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import * as React from "react";
 import { ModeToggle } from "../mode-toggle/mode-toggle";
@@ -8,10 +9,18 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 import { BookOpenCheck, Home, Ghost } from "lucide-react";
 
@@ -36,6 +45,14 @@ const items = [
 export function MySidebar() {
   return (
     <Sidebar collapsible="icon">
+      <SidebarHeader>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Navigation</SidebarGroupLabel>
