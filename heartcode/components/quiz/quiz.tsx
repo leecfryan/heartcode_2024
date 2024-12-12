@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { BackgroundGradient } from '../ui/background-gradient'
 import { AlertCircle } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast";
+import QuizResultsEffects from '../quiz-results/quiz-results'
 
 // Define the structure for a question
 interface Question {
@@ -64,6 +65,7 @@ export default function Quiz() {
     const [quizCompleted, setQuizCompleted] = useState(false)
     const [score, setScore] = useState(0)
     const [validationError, setValidationError] = useState<string | null>(null)
+    const [isConfetti, setIsConfetti] = useState(false); // State to trigger confetti
 
     const handleAnswerChange = (value: string) => {
         const newAnswers = [...userAnswers]
@@ -150,7 +152,10 @@ export default function Quiz() {
                     </CardHeader>
                     <CardContent>
                         <p className="text-lg font-semibold">Your score: {score} out of {questions.length}</p>
-
+                        <QuizResultsEffects
+                            score={score}
+                            totalQuestions={questions.length}
+                        />
                     </CardContent>
                 </Card>
             </BackgroundGradient>
