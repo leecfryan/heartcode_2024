@@ -54,7 +54,7 @@ const cards = [
 
 export default function Home() {
   return (
-    <div className="w-[calc(100vw-50px)] font-mono">
+    <div className="lg:w-[calc(100vw-50px)] md:w-screen font-mono">
       <div className="h-lvh relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
         <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <Boxes />
@@ -96,7 +96,6 @@ export default function Home() {
             </p>
           </div>
           <ChartComponent />
-          <p className=" flex items-center justify-center text-lg">The increase from 2022 to 2023</p>
         </div>
       </div>
 
@@ -108,9 +107,8 @@ export default function Home() {
           <HoverCard>
             <HoverCardTrigger className="text-xl">Depression,</HoverCardTrigger>
             <HoverCardContent>
-              They abuse substances as a way to increase their dopamine levels
-              as well as to feel something nice, to feel happy even though it
-              will stop working after consuming so much.
+              They abuse substances as a way to increase their dopamine levels, to feel happy even though the drug/substance
+              will stop working after consuming so much of it.
             </HoverCardContent>
           </HoverCard>
         </div>
@@ -120,7 +118,7 @@ export default function Home() {
             <HoverCardTrigger className="text-xl">Stress,</HoverCardTrigger>
             <HoverCardContent>
               They abuse substances as an escape from reality not realising
-              their actions will lead to the destruction of their body
+              their actions will lead to the destruction of their own body
             </HoverCardContent>
           </HoverCard>
         </div>
@@ -131,22 +129,20 @@ export default function Home() {
               Influence and Upbringing,
             </HoverCardTrigger>
             <HoverCardContent>
-              They abuse substancees because they were told it was right since
-              many others do it around them without questioning if it was right
-              or not.
+              They abuse substances because they were told it was right. Since many others do it around them, without questioning if it was right or not, they also start to abuse substances thinking it is the right thing to do.
             </HoverCardContent>
           </HoverCard>
         </div>
       </ div>
 
-      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">WHAT ELSE CAN THEY DO INSTEAD?</h1>
+      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">WHAT THEY CAN DO INSTEAD?</h1>
       <p className="flex items-center justify-center">(Hover over the words)</p>
       <div className="flex items-center justify-center">
         <div>
           <HoverCard>
             <HoverCardTrigger className="text-xl">Seek professional help,</HoverCardTrigger>
             <HoverCardContent>
-              People who are facing troubles can call the helplines and seek support from profesionals who are trained to help others who are suffering
+              People who are facing hard times due to or are contemplating reaching out to substances because of it can call the helplines and seek support from profesionals who are trained to help others who are troubled
             </HoverCardContent>
           </HoverCard>
         </div>
@@ -164,7 +160,7 @@ export default function Home() {
           <HoverCard>
             <HoverCardTrigger className="text-xl">Have friends who are positive influences,</HoverCardTrigger>
             <HoverCardContent>
-              Having people who are positive influencers allow one to not fall into temptation
+              Having people who are positive influences allows one to not fall into temptation
             </HoverCardContent>
           </HoverCard>
         </div>
