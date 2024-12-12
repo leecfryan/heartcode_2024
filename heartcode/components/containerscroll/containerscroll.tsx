@@ -2,7 +2,7 @@
 import React from "react";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 import Image from "next/image";
-import gl from "@/app/assets/girl.png";
+import tgt from "@/app/assets/tgt.jpg";
 export function HeroScrollDemo() {
   return (
     <div className="flex flex-col overflow-hidden">
@@ -20,7 +20,7 @@ export function HeroScrollDemo() {
         }
       >
         <Image
-          src={gl}
+          src={tgt}
           alt="hero"
           height={720}
           width={1400}

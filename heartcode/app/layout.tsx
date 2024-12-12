@@ -7,6 +7,7 @@ import { MySidebar } from "@/components/side-bar/side-bar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { cookies } from "next/headers"
+import { Toaster } from "@/components/ui/toaster";
 
 
 const geistSans = localFont({
@@ -49,6 +50,7 @@ export default function RootLayout({
                 <SidebarTrigger />
                 {children}
               </main>
+              <Toaster/>
             </SidebarProvider>
           </ThemeProvider>
         </body>
