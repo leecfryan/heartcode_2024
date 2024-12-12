@@ -25,7 +25,7 @@ interface CustomCarouselProps {
 
 export function CustomCarousel({ cards }: CustomCarouselProps) {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 1000, stopOnInteraction: false, stopOnMouseEnter: false })
   );
   return (
     <Carousel
