@@ -129,9 +129,7 @@ export default function Home() {
               Influence and Upbringing,
             </HoverCardTrigger>
             <HoverCardContent>
-              They abuse substances because they were told it was right. Since
-              many others do it around them without questioning if it was right
-              or not.
+              They abuse substances because they were told it was right. Since many others do it around them, without questioning if it was right or not, they also start to abuse substances thinking it is the right thing to do.
             </HoverCardContent>
           </HoverCard>
         </div>
