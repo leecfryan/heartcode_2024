@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/hover-card";
 import { Circle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import MiniGame from "../components/mini-game/MiniGame";
 
 const cards = [
   {
@@ -66,6 +67,7 @@ export default function Home() {
           Is it worth it?
         </p>
       </div>
+
       <div>
         <h1 className="text-5xl pt-12 text-center mb-10">
           Types Of Substances
@@ -74,6 +76,7 @@ export default function Home() {
           <CustomCarousel cards={cards} />
         </div>
       </div>
+
       <h1 className="flex items-center justify-center font-semibold text-2xl">
         WHAT DIFFERENCE DOES IT MAKE?
       </h1>
@@ -116,8 +119,8 @@ export default function Home() {
             </HoverCardTrigger>
             <HoverCardContent>
               They abuse substances as a way to increase their dopamine levels
-              as well as to feel happy even though it
-              will stop working after consuming so much of it.
+              as well as to feel happy even though it will stop working after
+              consuming so much of it.
             </HoverCardContent>
           </HoverCard>
         </div>
@@ -146,7 +149,8 @@ export default function Home() {
             <HoverCardContent>
               They abuse substancees because they were told it was right. Since
               many others do it around them, without questioning if it was right
-              or not, they also start to abuse substances thinking it is the right thing to do
+              or not, they also start to abuse substances thinking it is the
+              right thing to do
             </HoverCardContent>
           </HoverCard>
         </div>
@@ -173,7 +177,7 @@ export default function Home() {
 
         <div className="border-r-2 dark:border-white border-black">
           <HoverCard>
-          <HoverCardTrigger asChild>
+            <HoverCardTrigger asChild>
               <Button variant="ghost" className="text-xl">
                 Get Regular Exercise
               </Button>
@@ -187,7 +191,7 @@ export default function Home() {
 
         <div className="border-r-2 dark:border-white border-black">
           <HoverCard>
-          <HoverCardTrigger asChild>
+            <HoverCardTrigger asChild>
               <Button variant="ghost" className="text-xl">
                 Positive Influences
               </Button>
@@ -198,6 +202,11 @@ export default function Home() {
             </HoverCardContent>
           </HoverCard>
         </div>
+      </div>
+
+      <div className="text-center text-3xl pt-10">
+        <h1>Minigame</h1>
+        <MiniGame />
       </div>
       <div className="py-5 mt-8">
         <hr />
