@@ -104,7 +104,7 @@ export default function Home() {
       </div>
 
       <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">
-        WHY PEOPLE SUCCUMB TO DRUGS?
+        WHY PEOPLE DO DRUGS?
       </h1>
       <div className="flex items-center justify-center font-mono">
         <div>
