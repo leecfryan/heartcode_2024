@@ -131,7 +131,7 @@ export default function Home() {
             </HoverCardTrigger>
             <HoverCardContent>
               They abuse substances as an escape from reality not realising
-              their actions will lead to the destruction of their body
+              their actions will lead to the destruction of their own body
             </HoverCardContent>
           </HoverCard>
         </div>
@@ -153,7 +153,7 @@ export default function Home() {
       </div>
 
       <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">
-        WHAT ELSE CAN THEY DO INSTEAD?
+        WHAT THEY CAN DO INSTEAD?
       </h1>
       <div className="flex items-center justify-center">
         <div className="border-r-2 dark:border-white border-black">

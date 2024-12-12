@@ -10,8 +10,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Compare } from "@/components/ui/compare";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import cheysad from "@/app/assets/cheysad.jpg";
+import cheyhap from "@/app/assets/cheyhap.jpg";
+import megsad from "@/app/assets/megsad.jpg";
+import meghap from "@/app/assets/meghap.jpg";
+
 export default function Home() {
     return (
         <div className="justify-center">
@@ -103,16 +108,16 @@ export default function Home() {
 
             <div className="p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 px-4 flex space-x-4 justify-center">
                 <Compare
-                    firstImage="https://assets.aceternity.com/code-problem.png"
-                    secondImage="https://assets.aceternity.com/code-solution.png"
+                    firstImage={cheysad.src}
+                    secondImage={cheyhap.src}
                     firstImageClassName="object-cover object-left-top"
                     secondImageClassname="object-cover object-left-top"
                     className="h-[250px] w-[200px] md:h-[500px] md:w-[500px]"
                     slideMode="hover"
                 />
                 <Compare
-                    firstImage="https://assets.aceternity.com/code-problem.png"
-                    secondImage="https://assets.aceternity.com/code-solution.png"
+                    firstImage={megsad.src}
+                    secondImage={meghap.src}
                     firstImageClassName="object-cover object-left-top"
                     secondImageClassname="object-cover object-left-top"
                     className="h-[250px] w-[200px] md:h-[500px] md:w-[500px]"
