@@ -96,7 +96,6 @@ export default function Home() {
             </p>
           </div>
           <ChartComponent />
-          <p className=" flex items-center justify-center text-lg">The increase from 2022 to 2023</p>
         </div>
       </div>
 
