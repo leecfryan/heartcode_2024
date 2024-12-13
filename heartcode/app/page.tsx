@@ -14,6 +14,8 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Circle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import MiniGame from "../components/mini-game/MiniGame";
 
 const cards = [
   {
@@ -65,6 +67,7 @@ export default function Home() {
           Is it worth it?
         </p>
       </div>
+
       <div>
         <h1 className="text-5xl pt-12 text-center mb-10">
           Types Of Substances
@@ -73,6 +76,7 @@ export default function Home() {
           <CustomCarousel cards={cards} />
         </div>
       </div>
+
       <h1 className="flex items-center justify-center font-semibold text-2xl">
         WHAT DIFFERENCE DOES IT MAKE?
       </h1>
@@ -93,30 +97,42 @@ export default function Home() {
             <h1 className="text-3xl text-extrabold">Trend of Drug Abuse</h1>
             <p className="text-lg">The increase from 2022 to 2023</p>
             <p className="text-md flex justify-center">
-              <Circle style={{color:'hsl(var(--chart-1))'}} size={24} />:2022- <Circle style={{color:'hsl(var(--chart-2))'}} size={24} />:2023
+              <Circle style={{ color: "hsl(var(--chart-1))" }} size={24} />
+              :2022-{" "}
+              <Circle style={{ color: "hsl(var(--chart-2))" }} size={24} />
+              :2023
             </p>
           </div>
           <ChartComponent />
         </div>
       </div>
-
       <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">
         WHY PEOPLE DO DRUGS?
       </h1>
-      <div className="flex items-center justify-center font-mono">
-        <div>
+      <p className="text-center">(Hover over the words)</p>
+      <div className="flex justify-center font-mono">
+        <div className="border-r-2 dark:border-white border-black">
           <HoverCard>
-            <HoverCardTrigger className="text-xl">Depression,</HoverCardTrigger>
+            <HoverCardTrigger asChild>
+              <Button variant="ghost" className="text-xl">
+                Depression
+              </Button>
+            </HoverCardTrigger>
             <HoverCardContent>
-              They abuse substances as a way to increase their dopamine levels, to feel happy even though the drug/substance
-              will stop working after consuming so much of it.
+              They abuse substances as a way to increase their dopamine levels
+              as well as to feel happy even though it will stop working after
+              consuming so much of it.
             </HoverCardContent>
           </HoverCard>
         </div>
 
-        <div className="mx-1">
+        <div className="border-r-2 dark:border-white border-black">
           <HoverCard>
-            <HoverCardTrigger className="text-xl">Stress,</HoverCardTrigger>
+            <HoverCardTrigger asChild>
+              <Button variant="ghost" className="text-xl">
+                Stress
+              </Button>
+            </HoverCardTrigger>
             <HoverCardContent>
               They abuse substances as an escape from reality not realising
               their actions will lead to the destruction of their own body
@@ -124,62 +140,92 @@ export default function Home() {
           </HoverCard>
         </div>
 
-        <div className="mx-1 ">
-          <HoverCard>
-            <HoverCardTrigger className="text-xl">
-              Influence and Upbringing,
-            </HoverCardTrigger>
-            <HoverCardContent>
-              They abuse substances because they were told it was right. Since many others do it around them, without questioning if it was right or not, they also start to abuse substances thinking it is the right thing to do.
-            </HoverCardContent>
-          </HoverCard>
-        </div>
-      </ div>
-
-      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">WHAT THEY CAN DO INSTEAD?</h1>
-      <p className="flex items-center justify-center">(Hover over the words)</p>
-      <div className="flex items-center justify-center">
         <div>
           <HoverCard>
-            <HoverCardTrigger className="text-xl">Seek professional help,</HoverCardTrigger>
+            <HoverCardTrigger asChild>
+              <Button variant="ghost" className="text-xl">
+                Influence and Upbringing
+              </Button>
+            </HoverCardTrigger>
             <HoverCardContent>
-              People who are facing hard times due to or are contemplating reaching out to substances because of it can call the helplines and seek support from profesionals who are trained to help others who are troubled
+              They abuse substancees because they were told it was right. Since
+              many others do it around them, without questioning if it was right
+              or not, they also start to abuse substances thinking it is the
+              right thing to do
+            </HoverCardContent>
+          </HoverCard>
+        </div>
+      </div>
+
+      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">
+        WHAT THEY CAN DO INSTEAD?
+      </h1>
+      <div className="flex items-center justify-center">
+        <div className="border-r-2 dark:border-white border-black">
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <Button variant="ghost" className="text-xl">
+                Seek Professional Help
+              </Button>
+            </HoverCardTrigger>
+            <HoverCardContent>
+              People who are facing troubles can call the helplines and seek
+              support from profesionals who are trained to help others who are
+              suffering
             </HoverCardContent>
           </HoverCard>
         </div>
 
-        <div className="mx-1">
+        <div className="border-r-2 dark:border-white border-black">
           <HoverCard>
-            <HoverCardTrigger className="text-xl">Get Regular Exercise,</HoverCardTrigger>
+            <HoverCardTrigger asChild>
+              <Button variant="ghost" className="text-xl">
+                Get Regular Exercise
+              </Button>
+            </HoverCardTrigger>
             <HoverCardContent>
-              Getting regular exercise helps to clear the mind and strengthen the body which supports the mind.
+              Getting regular exercise helps to clear the mind and strengthen
+              the body which supports the mind.
             </HoverCardContent>
           </HoverCard>
         </div>
 
-        <div className="mx-1">
+        <div className="border-r-2 dark:border-white border-black">
           <HoverCard>
-            <HoverCardTrigger className="text-xl">Have friends who are positive influences,</HoverCardTrigger>
+            <HoverCardTrigger asChild>
+              <Button variant="ghost" className="text-xl">
+                Positive Influences
+              </Button>
+            </HoverCardTrigger>
             <HoverCardContent>
-              Having people who are positive influences allows one to not fall into temptation
+              Having people who are positive influences allows one to not fall
+              into temptation
             </HoverCardContent>
           </HoverCard>
         </div>
       </div>
-      <div>
-        <h1 className="text-2xl flex items-center justify-center font-semibold mt-10 mb-2 font-mono">HOTLINES:</h1>
+
+      <div className="text-center text-3xl pt-10">
+        <h1>Minigame</h1>
+        <MiniGame />
       </div>
-      <div className="flex items-center justify-center font-mono">
-        <p>
-          National Addictions Management Service (NAMS) General Enquiries . Tel:
-          6389 2000.{" "}
-        </p>
-      </div>
-      <div className="flex items-center justify-center font-mono">
-        <p>Appointments. Tel: 6389 2200</p>
-      </div>
-      <div className="flex items-center justify-center font-mono">
-        <p>Mental Health Helpline. Tel: 6389 2222</p>
+      <div className="py-5 mt-8">
+        <hr />
+        <h1 className="text-2xl flex items-center justify-center font-semibold mb-2 font-mono">
+          HOTLINES:
+        </h1>
+        <div className="flex items-center justify-center font-mono">
+          <p>
+            National Addictions Management Service (NAMS) General Enquiries .
+            Tel: 6389 2000.{" "}
+          </p>
+        </div>
+        <div className="flex items-center justify-center font-mono">
+          <p>Appointments. Tel: 6389 2200</p>
+        </div>
+        <div className="flex items-center justify-center font-mono">
+          <p>Mental Health Helpline. Tel: 6389 2222</p>
+        </div>
       </div>
     </div>
   );
