@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { TypewriterEffectDemo } from '@/components/typewriter/typewriter';
 
 const resources = [
     {
@@ -38,8 +39,8 @@ export default function Home() {
     return (
         <div className="min-h-screen w-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-black">
             <div className="max-w-3xl mx-auto">
-                <h1 className="text-3xl font-bold text-center text-gray-900 mb-8 dark:text-white">
-                    Drug Abuse Awareness Resources
+                <h1 className="text-l font-bold text-center text-gray-900 mb-8 dark:text-white">
+                    <TypewriterEffectDemo/>
                 </h1>
                 <p className="text-center text-gray-600 mb-12 dark:text-white">
                     Explore these valuable websites dedicated to drug abuse awareness, prevention, and support.
@@ -64,10 +65,10 @@ export default function Home() {
                 </div>
                 <div className="mt-12 text-center">
                     <a
-                        href="tel:1-800-662-4357"
+                        href="tel:6-RECOVER (6-7326837)"
                         className="inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200"
                     >
-                        Get Help Now: 1-800-662-HELP
+                        Get Help Now: 6-RECOVER (6-7326837)
                     </a>
                 </div>
             </div>
