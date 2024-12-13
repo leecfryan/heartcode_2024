@@ -90,6 +90,7 @@ export default function Home() {
       <div className=" w-full flex align-middle justify-center mt-10">
         <div className="w-1/2">
           <div className="chart-header text-center">
+            <h1 className="text-3xl text-extrabold">Trend of Drug Abuse</h1>
             <p className="text-lg">The increase from 2022 to 2023</p>
             <p className="text-md flex justify-center">
               <Circle style={{color:'hsl(var(--chart-1))'}} size={24} />:2022- <Circle style={{color:'hsl(var(--chart-2))'}} size={24} />:2023
