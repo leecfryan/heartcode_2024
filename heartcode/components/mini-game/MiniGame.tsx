@@ -10,25 +10,38 @@ const MiniGame = () => {
   const objects = useRef<
     { x: number; y: number; id: number; svg: HTMLImageElement; size: number }[]
   >([]); // Falling objects with SVGs
-  const player = useRef({ x: 250, width: 100 }); // Player position
-  const keys = useRef<{ [key: string]: boolean }>({}); // Track pressed keys
-  const svgs = useRef<HTMLImageElement[]>([]); // Preloaded SVGs
+  const player = useRef<{ x: number; width: number; svg?: HTMLImageElement }>({
+    x: 250,
+    width: 100,
+  });
+  const keys = useRef<{ [key: string]: boolean }>({});
+  const svgs = useRef<HTMLImageElement[]>([]);
 
+  // Preload player SVG
   useEffect(() => {
-    // Preload SVGs
-    const svgPaths = [
-      "assets/alcohol.svg",
-      "assets/drugs.svg",
-      "assets/marijuana.svg",
-      "assets/powder.svg",
-      "assets/syringe.svg",
-    ];
+    if (typeof window !== "undefined") {
+      const playerImage = new Image();
+      playerImage.src = "assets/player.svg"; // Replace with your player SVG path
+      player.current.svg = playerImage;
+    }
+  }, []);
 
-    svgPaths.forEach((path) => {
-      const img = new Image();
-      img.src = path;
-      svgs.current.push(img);
-    });
+  // Preload falling object SVGs
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const svgPaths = [
+        "assets/alcohol.svg",
+        "assets/drugs.svg",
+        "assets/marijuana.svg",
+        "assets/powder.svg",
+        "assets/syringe.svg",
+      ];
+      svgPaths.forEach((path) => {
+        const img = new Image();
+        img.src = path;
+        svgs.current.push(img);
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -41,7 +54,7 @@ const MiniGame = () => {
 
     const generateObject = () => {
       const size = Math.random() * 20 + 30; // Random size between 20 and 40
-      const svg = svgs.current[Math.floor(Math.random() * svgs.current.length)]; // Random SVG
+      const svg = svgs.current[Math.floor(Math.random() * svgs.current.length)];
       objects.current.push({
         x: Math.random() * (canvas.width - size),
         y: 0,
@@ -53,64 +66,63 @@ const MiniGame = () => {
 
     const movePlayer = () => {
       if (keys.current["ArrowLeft"] && player.current.x > 0) {
-        player.current.x -= 5; // Smooth movement left
+        player.current.x -= 5;
       }
       if (
         keys.current["ArrowRight"] &&
         player.current.x < canvas.width - player.current.width
       ) {
-        player.current.x += 5; // Smooth movement right
+        player.current.x += 5;
       }
     };
 
     const updateGame = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw player
-      ctx.fillStyle = "blue";
-      ctx.fillRect(
-        player.current.x,
-        canvas.height - 30,
-        player.current.width,
-        20
-      );
+      // Draw player SVG
+      if (player.current.svg) {
+        ctx.drawImage(
+          player.current.svg,
+          player.current.x,
+          canvas.height - 60, // Adjust for player's height
+          100, // Player's width
+          50 // Player's height
+        );
+      }
 
       // Draw and update objects
       objects.current.forEach((obj, i) => {
-        ctx.drawImage(obj.svg, obj.x, obj.y, obj.size, obj.size); // Draw SVG
+        ctx.drawImage(obj.svg, obj.x, obj.y, obj.size, obj.size);
 
-        obj.y += 5; // Move objects down
+        obj.y += 5;
 
-        // Check collision
         if (
-          obj.y >= canvas.height - 30 &&
+          obj.y >= canvas.height - 60 &&
           obj.x >= player.current.x &&
-          obj.x <= player.current.x + player.current.width
+          obj.x <= player.current.x + 100
         ) {
-          setScore((prev) => prev + 1); // Increment score
-          objects.current.splice(i, 1); // Remove the caught object immediately
+          setScore((prev) => prev + 1);
+          objects.current.splice(i, 1);
         }
 
-        // Increment missed only if the object falls below the canvas
         if (obj.y > canvas.height) {
-          setMissed((prev) => prev + 1); // Increment missed
-          objects.current.splice(i, 1); // Remove the missed object
+          setMissed((prev) => prev + 1);
+          objects.current.splice(i, 1);
         }
       });
 
-      movePlayer(); // Update player movement
+      movePlayer();
 
-      // Check game over
       if (missed >= 5 || timeLeft <= 0) {
         setIsRunning(false);
-        updateLeaderboard(score); // Update leaderboard
+        updateLeaderboard(score);
       } else {
         animationFrameId = requestAnimationFrame(updateGame);
       }
     };
 
     if (isRunning) {
-      const intervalId = setInterval(generateObject, 1000); // Generate a new object every second
+      const intervalId = setInterval(generateObject, 1000);
       updateGame();
 
       return () => {
@@ -121,7 +133,7 @@ const MiniGame = () => {
   }, [isRunning, missed, timeLeft]);
 
   useEffect(() => {
-    // Handle key presses for smooth movement
+    // Handle key presses for player movement
     const handleKeyDown = (e: KeyboardEvent) => {
       keys.current[e.key] = true;
     };
@@ -152,30 +164,30 @@ const MiniGame = () => {
   const startGame = () => {
     setScore(0);
     setMissed(0);
-    setTimeLeft(30); // Reset timer
+    setTimeLeft(30);
     setIsRunning(true);
-    objects.current = []; // Clear all existing falling objects
+    objects.current = [];
   };
 
   const updateLeaderboard = (newScore: number) => {
     setLeaderboard((prev) => {
       const updated = [...prev, newScore];
-      updated.sort((a, b) => b - a); // Sort in descending order
+      updated.sort((a, b) => b - a);
       if (updated.length > 10) {
-        updated.pop(); // Remove the lowest score if more than 10
+        updated.pop();
       }
       return updated;
     });
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 p-4 dark:text-white min-h-screen">
+    <div className="flex flex-col items-center gap-4 p-4">
       <h1 className="text-xl">Catch the Falling Objects</h1>
       <canvas
         ref={canvasRef}
         width={600}
         height={400}
-        className="border dark:border-white rounded-md"
+        className="border rounded-md bg-white"
       ></canvas>
       {!isRunning ? (
         <button
@@ -197,11 +209,9 @@ const MiniGame = () => {
         <h3 className="text-xl">Missed: {missed}</h3>
         <h3 className="text-xl">Time Left: {timeLeft}s</h3>
       </div>
-      <div className="w-full max-w-md h-40 overflow-y-auto border border-gray-700 rounded-md p-2 bg-gray-800">
-        <h3 className="text-xl font-bold text-center mb-2 text-white">
-          Leaderboard
-        </h3>
-        <ol className="list-decimal list-inside text-white">
+      <div className="w-full max-w-md h-40 overflow-y-auto border rounded-md p-2">
+        <h3 className="text-xl font-bold text-center mb-2">Leaderboard</h3>
+        <ol className="list-decimal list-inside">
           {leaderboard.map((score, index) => (
             <li key={index} className="mb-1">
               Score: {score}
