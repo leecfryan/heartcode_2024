@@ -8,10 +8,28 @@ const MiniGame = () => {
   const [leaderboard, setLeaderboard] = useState<number[]>([]);
   const [timeLeft, setTimeLeft] = useState(30); // 30 seconds timer
   const objects = useRef<
-    { x: number; y: number; id: number; color: string; size: number }[]
-  >([]); // Falling objects with variations
+    { x: number; y: number; id: number; svg: HTMLImageElement; size: number }[]
+  >([]); // Falling objects with SVGs
   const player = useRef({ x: 250, width: 100 }); // Player position
   const keys = useRef<{ [key: string]: boolean }>({}); // Track pressed keys
+  const svgs = useRef<HTMLImageElement[]>([]); // Preloaded SVGs
+
+  useEffect(() => {
+    // Preload SVGs
+    const svgPaths = [
+      "assets/alcohol.svg",
+      "assets/drugs.svg",
+      "assets/marijuana.svg",
+      "assets/powder.svg",
+      "assets/syringe.svg",
+    ];
+
+    svgPaths.forEach((path) => {
+      const img = new Image();
+      img.src = path;
+      svgs.current.push(img);
+    });
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -22,13 +40,13 @@ const MiniGame = () => {
     let animationFrameId: number;
 
     const generateObject = () => {
-      const colors = ["red", "green", "yellow", "purple", "orange"];
-      const size = Math.random() * 10 + 10; // Random size between 10 and 20
+      const size = Math.random() * 20 + 30; // Random size between 20 and 40
+      const svg = svgs.current[Math.floor(Math.random() * svgs.current.length)]; // Random SVG
       objects.current.push({
         x: Math.random() * (canvas.width - size),
         y: 0,
         id: Date.now(),
-        color: colors[Math.floor(Math.random() * colors.length)], // Random color
+        svg,
         size,
       });
     };
@@ -59,10 +77,7 @@ const MiniGame = () => {
 
       // Draw and update objects
       objects.current.forEach((obj, i) => {
-        ctx.fillStyle = obj.color; // Set object color
-        ctx.beginPath();
-        ctx.arc(obj.x, obj.y, obj.size, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.drawImage(obj.svg, obj.x, obj.y, obj.size, obj.size); // Draw SVG
 
         obj.y += 5; // Move objects down
 
@@ -154,13 +169,13 @@ const MiniGame = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 p-4 text-white min-h-screen">
+    <div className="flex flex-col items-center gap-4 p-4 dark:text-white min-h-screen">
       <h1 className="text-xl">Catch the Falling Objects</h1>
       <canvas
         ref={canvasRef}
         width={600}
         height={400}
-        className="border border-white rounded-md"
+        className="border dark:border-white rounded-md"
       ></canvas>
       {!isRunning ? (
         <button
@@ -183,7 +198,9 @@ const MiniGame = () => {
         <h3 className="text-xl">Time Left: {timeLeft}s</h3>
       </div>
       <div className="w-full max-w-md h-40 overflow-y-auto border border-gray-700 rounded-md p-2 bg-gray-800">
-        <h3 className="text-xl font-bold text-center mb-2">Leaderboard</h3>
+        <h3 className="text-xl font-bold text-center mb-2 text-white">
+          Leaderboard
+        </h3>
         <ol className="list-decimal list-inside text-white">
           {leaderboard.map((score, index) => (
             <li key={index} className="mb-1">
