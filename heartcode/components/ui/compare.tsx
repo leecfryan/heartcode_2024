@@ -23,7 +23,7 @@ export const Compare = ({
   className,
   firstImageClassName,
   secondImageClassname,
-  initialSliderPercentage = 0,
+  initialSliderPercentage = 100,
   slideMode = "hover",
   showHandlebar = true,
   autoplay = false,

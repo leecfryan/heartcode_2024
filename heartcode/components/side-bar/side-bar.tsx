@@ -22,7 +22,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 
-import { BookOpenCheck, Home, Ghost } from "lucide-react";
+import { BookOpenCheck, Home, Ghost, Book } from "lucide-react";
 
 const items = [
   {
@@ -34,6 +34,11 @@ const items = [
     title: "Quiz",
     url: "/quiz",
     icon: BookOpenCheck,
+  },
+  {
+    title: "Resources",
+    url: "/resource",
+    icon: Book,
   },
   {
     title: "About Us",

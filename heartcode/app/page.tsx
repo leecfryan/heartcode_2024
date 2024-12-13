@@ -69,7 +69,7 @@ export default function Home() {
       </div>
 
       <div>
-        <h1 className="text-5xl pt-12 text-center mb-10">
+        <h1 className="text-5xl pt-12 text-center mb-10 font-extrabold text-decoration-line: underline">
           Types Of Substances
         </h1>
         <div className="flex w-full justify-center">
@@ -77,7 +77,7 @@ export default function Home() {
         </div>
       </div>
 
-      <h1 className="flex items-center justify-center font-semibold text-2xl">
+      <h1 className="flex items-center justify-center font-semibold text-2xl text-decoration-line: underline">
         WHAT DIFFERENCE DOES IT MAKE?
       </h1>
       <div className="flex items-center justify-center p-5">
@@ -94,7 +94,7 @@ export default function Home() {
       <div className=" w-full flex align-middle justify-center mt-10">
         <div className="w-1/2">
           <div className="chart-header text-center">
-            <h1 className="text-3xl text-extrabold">Trend of Drug Abuse</h1>
+            <h1 className="text-3xl font-extrabold mb-10 text-decoration-line: underline">Trend of Drug Abuse</h1>
             <p className="text-lg">The increase from 2022 to 2023</p>
             <p className="text-md flex justify-center">
               <Circle style={{ color: "hsl(var(--chart-1))" }} size={24} />
@@ -106,7 +106,7 @@ export default function Home() {
           <ChartComponent />
         </div>
       </div>
-      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">
+      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl text-decoration-line: underline">
         WHY PEOPLE DO DRUGS?
       </h1>
       <p className="text-center">(Hover over the words)</p>
@@ -157,7 +157,7 @@ export default function Home() {
         </div>
       </div>
 
-      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl">
+      <h1 className="flex items-center justify-center font-semibold mt-8 mb-2 text-2xl text-decoration-line: underline">
         WHAT THEY CAN DO INSTEAD?
       </h1>
       <div className="flex items-center justify-center">
@@ -205,13 +205,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="text-center text-3xl pt-10">
-        <h1>Minigame</h1>
+      <div className="text-center text-3xl pt-10 ">
+        <h1 className="text-decoration-line: underline font-extrabold">Minigame</h1>
         <MiniGame />
       </div>
       <div className="py-5 mt-8">
         <hr />
-        <h1 className="text-2xl flex items-center justify-center font-semibold mb-2 font-mono">
+        <h1 className="text-2xl flex items-center justify-center font-semibold mb-2 font-mono text-decoration-line: underline mt-5">
           HOTLINES:
         </h1>
         <div className="flex items-center justify-center font-mono">

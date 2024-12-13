@@ -24,7 +24,7 @@ export default function Home() {
                 <HeroScrollDemo></HeroScrollDemo>
             </div>
 
-            <div className="mx-auto ml-64">
+            <div className="mx-auto ml-80">
                 <Tabs defaultValue="megan" className="w-[800px]">
                     <TabsList className="grid w-full grid-cols-2">
                         <TabsTrigger value="megan">Megan</TabsTrigger>
@@ -64,7 +64,7 @@ export default function Home() {
                         </Card>
                     </TabsContent>
                     <TabsContent value="cheyenne">
-                        <Card className="bg-gray-300 dark:bg-gray-800 mb-32">
+                        <Card className="bg-gray-300 dark:bg-gray-800 mb-32 shadow-sky-400">
                             <CardHeader>
                                 <CardTitle className="text-2xl">Hi! I am Cheyenne. I play with everything.</CardTitle>
                                 <CardDescription>
@@ -104,9 +104,10 @@ export default function Home() {
             </div>
 
 
-            <h1 className="font-extrabold text-3xl text-center">Megan & Cheyenne Before and After HeartCode...</h1>
+            <h1 className="font-extrabold text-3xl text-center ml-10">Megan & Cheyenne Before and After HeartCode...</h1>
 
-            <div className="p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 px-4 flex space-x-4 justify-center">
+
+            <div className="p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 px-4 flex space-x-4 justify-center ml-32">
                 <Compare
                     firstImage={cheysad.src}
                     secondImage={cheyhap.src}
