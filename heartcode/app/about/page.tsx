@@ -19,7 +19,7 @@ import meghap from "@/app/assets/meghap.jpg";
 
 export default function Home() {
     return (
-        <div className="justify-center">
+        <div className="justify-center ml-48">
             <div className="mx-auto ml-36">
                 <HeroScrollDemo></HeroScrollDemo>
             </div>
