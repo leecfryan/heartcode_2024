@@ -107,7 +107,7 @@ export default function Home() {
             <h1 className="font-extrabold text-3xl text-center ml-10">Megan & Cheyenne Before and After HeartCode...</h1>
 
 
-            <div className="p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 px-4 flex space-x-4 justify-center ml-32">
+            <div className="p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 px-4 flex space-x-4 justify-center ml-32 mb-32">
                 <Compare
                     firstImage={cheysad.src}
                     secondImage={cheyhap.src}
